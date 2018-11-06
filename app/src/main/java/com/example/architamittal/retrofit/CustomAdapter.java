@@ -35,12 +35,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
         Facts facts = datalist.get(i);
         Log.d("tag", facts.getText());
-        customViewHolder.text.setText(String.valueOf(facts.getId()));
+        //customViewHolder.text.setText(String.valueOf(facts.getId()));
         customViewHolder.text1.setText(String.valueOf(facts.getText()));
-        customViewHolder.text2.setText(String.valueOf(facts.getSource()));
+        //customViewHolder.text2.setText(String.valueOf(facts.getSource()));
         //customViewHolder.image.setImageURI(photos.getUrl());
-        customViewHolder.text3.setText(String.valueOf(facts.getUsed()));
-        customViewHolder.text4.setText(String.valueOf(facts.getType()));
+        //customViewHolder.text3.setText(String.valueOf(facts.getUsed()));
+        //customViewHolder.text4.setText(String.valueOf(facts.getType()));
     }
 
     @Override
@@ -53,11 +53,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         //ImageView image;
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
-            text = itemView.findViewById(R.id.text);
+            //text = itemView.findViewById(R.id.text);
             text1 = itemView.findViewById(R.id.text1);
-            text2 = itemView.findViewById(R.id.text2);
-            text3 = itemView.findViewById(R.id.text3);
-            text4 = itemView.findViewById(R.id.text4);
+            //text2 = itemView.findViewById(R.id.text2);
+            //text3 = itemView.findViewById(R.id.text3);
+            //text4 = itemView.findViewById(R.id.text4);
             //image = itemView.findViewById(R.id.image);
         }
     }

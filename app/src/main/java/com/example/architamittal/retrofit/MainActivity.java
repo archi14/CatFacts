@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     Retrofit retrofit;
     EditText animal,number;
     Button btn;
+    LinearLayout visible;
     public static final String BASE_URL ="https://cat-fact.herokuapp.com";
 
 
@@ -41,9 +44,17 @@ public class MainActivity extends AppCompatActivity {
         animal = findViewById(R.id.animal);
         number = findViewById(R.id.number);
         btn = findViewById(R.id.btn);
+        visible = findViewById(R.id.visible);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //animal.setVisibility(View.INVISIBLE);
+                //number.setVisibility(View.INVISIBLE);
+                //btn.setVisibility(View.INVISIBLE);
+                ViewGroup.LayoutParams params = visible.getLayoutParams();
+                params.height=0;
+                visible.setLayoutParams(params);
+
                 retrofit = getRetrofit();
                 ApiInterface apiInterface = retrofit.create(ApiInterface.class);
                 Call<List<Facts>> call = apiInterface.getAllFacts(animal.getText().toString(),Integer.valueOf(number.getText().toString()));
